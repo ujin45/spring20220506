@@ -14,21 +14,32 @@
 </head>
 <body>
 
-	<c:url value ="/ex14/sub06" var="emloyeeUrl"></c:url>
-	
-	<h1>${message }</h1>
-	
-	<h1>새 직원 입력</h1>
-	<form action="${employeeUrl}" method="post">
-		FIRSTNAME : <input type="text" name="firstName" value="Y.J"/> <br />
-		LASTNAME : <input type="text" name="lastName" value="KIM"/> <br />
-		BIRTHDATE : <input type="date" name="birthDate" value="1990-01-01" /> <br />  
-		PHOTO : <input type="text" name="photo" value="photo999"/> <br />
-		NOTES : <textarea name="notes" id="" cols="30" rows="10">US President...</textarea>
-		<br />
-		<button>등록</button>
-	</form>
-
+		<h1>직원 목록</h1>
+		<table class="table">
+			<thead>
+				<th>ID</th>
+				<th>FIRST NAME</th>
+				<th>LAST NAME</th>
+				<th>BIRTH DATE</th>
+				<th>PHOTO</th>
+				<th>NOTES</th>
+			</thead>
+			
+			<tbody>
+				<c:forEach items = "${employees }" var="emp">
+					<tr>
+						<td>${emp.id }</td>
+						<td>${emp.firstName }</td>
+						<td>${emp.lastName }</td>
+						<td>${emp.birthDate }</td>
+						<td>${emp.photo }</td>
+						<td>${emp.notes }</td>
+					</tr>
+				
+				</c:forEach>
+			
+			</tbody>
+		</table>
 
 </body>
 </html>

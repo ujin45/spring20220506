@@ -14,20 +14,24 @@
 </head>
 <body>
 
-	<c:url value ="/ex14/sub06" var="emloyeeUrl"></c:url>
+	<h1>${board.id }번 게시물 보기</h1>
 	
-	<h1>${message }</h1>
+	<c:url value="/ex15/board/modify" var="modifyLink"></c:url>
 	
-	<h1>새 직원 입력</h1>
-	<form action="${employeeUrl}" method="post">
-		FIRSTNAME : <input type="text" name="firstName" value="Y.J"/> <br />
-		LASTNAME : <input type="text" name="lastName" value="KIM"/> <br />
-		BIRTHDATE : <input type="date" name="birthDate" value="1990-01-01" /> <br />  
-		PHOTO : <input type="text" name="photo" value="photo999"/> <br />
-		NOTES : <textarea name="notes" id="" cols="30" rows="10">US President...</textarea>
-		<br />
-		<button>등록</button>
+	
+	<form action="${modifyLink}" method="post">
+	<input type="hidden" name="id" value="${board.id }" />
+		
+		제목 : <input type="text" value="${board.title }" name="title" /> <br />
+		
+		본문 : <textarea cols="30" rows="10" name="body">${board.body }</textarea> <br />
+		
+		작성일시 : <input type="datetime-local" value="${board.inserted }" readonly />
+	
+	<button>수정</button>
 	</form>
+	
+	
 
 
 </body>
