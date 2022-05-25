@@ -16,3 +16,6 @@ ALTER TABLE Reply ADD FOREIGN KEY (board_id) REFERENCES Board(id);
 
 
 
+SELECT * FROM Board;
+SELECT * FROM Reply ORDER BY id DESC;
+SELECT * FROM Reply;

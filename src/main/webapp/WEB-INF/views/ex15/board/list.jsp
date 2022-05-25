@@ -24,9 +24,9 @@
 	<table class="table">
 		<thead>
 			<tr>
-				<th>id</th>
-				<th>title</th>
-				<th>inserted</th>
+				<th>ID</th>
+				<th>TITLE</th>
+				<th>INSERTED</th>
 			</tr>
 		</thead>
 		
@@ -41,12 +41,7 @@
 					<a href="${link }">
 							${board.title }
 					</a>
-					<c:if test="${board.numOfReply > 0 }">
-						[${board.numOfReply }]
-					</c:if>
-					
-					</td>
-					<td>${board.inserted }</td>
+				
 				</tr>
 			 </c:forEach>
 		</tbody>
